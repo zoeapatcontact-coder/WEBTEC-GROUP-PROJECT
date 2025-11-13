@@ -1,0 +1,321 @@
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #0b0b0b !important;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-brand span {
+  color: #0d6efd;
+}
+
+.nav-link {
+  color: #ccc !important;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #fff !important;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* Hero Layout Spacing */
+.hero-section .container {
+  gap: 5rem; /* Adds space between text and image */
+}
+
+@media (max-width: 991px) {
+  .hero-section .container {
+    gap: 2.5rem; /* Slightly smaller gap on smaller screens */
+  }
+}
+
+.hero-img {
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  border-radius: 20px;
+}
+
+.hero-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(13, 110, 253, 0.3);
+}
+
+/* Product Card Styles */
+.product-card {
+  background-color: #1b1b1b !important; /* Override Bootstrap bg-secondary */
+  color: #f8f9fa;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 119, 255, 0.25);
+}
+
+.product-card img {
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* --- Enhanced Readability --- */
+.product-card .card-title {
+  color: #ffffff !important; /* Override Bootstrap */
+  font-weight: 600;
+}
+
+/* Override Bootstrap's text-muted */
+.product-card .card-text {
+  color: #d1d1d1 !important; /* Light gray text for contrast */
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Price Styling */
+.price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #00bcd4 !important; /* Bright cyan for contrast */
+  letter-spacing: 1.2px; /* Adds spacing between digits */
+  margin-top: 5px;
+  font-variant-numeric: lining-nums;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* On hover, slightly brighten text */
+.product-card:hover .card-title,
+.product-card:hover .card-text {
+  color: #ffffff !important;
+}
+/* --- End Enhanced Readability --- */
+
+/* Buttons */
+.btn-primary {
+  background-color: #0d6efd;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  box-shadow: 0 0 15px rgba(13, 110, 253, 0.5);
+}
+
+.btn-outline-light:hover {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* Newsletter */
+.newsletter-section input {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+.newsletter-section input::placeholder {
+  color: #aaa;
+  opacity: 1;
+}
+
+.newsletter-section input:focus {
+  background-color: #222;
+  border-color: #0d6efd;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(13, 110, 253, 0.4);
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+}
+
+footer a:hover {
+  color: #0d6efd;
+}
+
+/* Social Icons */
+.social-icons a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #0d6efd;
+  transform: scale(1.2);
+}
+
+/* Cart Badge */
+.cart-badge {
+  background-color: #0d6efd;
+  color: white;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  padding: 3px 7px;
+  position: absolute;
+  top: 2px;
+  right: 0;
+}
+
+/* Section transitions */
+section {
+  transition: background 0.4s ease;
+}
+
+/* Shift hero text slightly to the left */
+.hero-section .col-lg-6:first-child {
+  margin-left: -3.5rem; /* adjust this value for how far left you want it */
+}
+
+@media (max-width: 991px) {
+  .hero-section .col-lg-6:first-child {
+    margin-left: -2.5rem; /* reset for mobile screens */
+  }
+}
+
+/* Increased spacing between Featured Product cards */
+.featured-products .row {
+  row-gap: 3rem !important; /* vertical space */
+  column-gap: 3.5rem !important; /* horizontal space (wider) */
+}
+
+.featured-products .col-md-4 {
+  flex: 1 1 30%;
+}
+
+/* Responsive spacing for smaller screens */
+@media (max-width: 991px) {
+  .featured-products .row {
+    row-gap: 2rem !important;
+    column-gap: 1.5rem !important;
+  }
+}
+
+/* === Page Section Layout Fixes === */
+.about-story .container,
+.core-values .container,
+.team-section .container {
+  max-width: 1140px;
+}
+
+/* Override for Core Values to allow full width and horizontal cards */
+.core-values .container {
+  max-width: none !important; /* Remove max-width to use full screen width */
+}
+
+/* Make Core Values cards smaller to fit 3 horizontally with gaps */
+.core-values .col-md-4 {
+  flex: 0 0 30%; /* Set each card to 30% width */
+  max-width: 30%; /* Ensure max width is 30% */
+}
+
+/* Make Core Values text brighter for better readability */
+.core-values p {
+  color: #e0e0e0 !important; /* Slightly brighter than text-secondary for contrast against grey background */
+}
+
+.about-section {
+  background-color: #0f0f0f;
+  padding: 80px 10%;
+  color: #fff;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  color: #007bff;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+}
+
+.about-story, .core-values, .team-section {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.core-values .row,
+.team-section .row {
+  row-gap: 2rem;
+  column-gap: 2rem;
+}
+
+/* Adds wider horizontal spacing for Our Story section */
+.about-story .container .row {
+  column-gap: 5rem; /* increase or decrease as needed (default ~3rem) */
+}
+
+@media (max-width: 991px) {
+  .about-story .container .row {
+    column-gap: 2rem; /* smaller gap for mobile */
+  }
+}
+
+.about-story .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px; /* Adjust spacing between text and image */
+}
+
+@media (max-width: 768px) {
+  .about-story .row {
+    flex-direction: column;
+    gap: 30px; /* Smaller gap on mobile */
+  }
+}
