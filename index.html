@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechGadgets | Home</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 0.7s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in:nth-child(1) { animation-delay: 0.1s; }
+    .fade-in:nth-child(2) { animation-delay: 0.3s; }
+    .fade-in:nth-child(3) { animation-delay: 0.5s; }
+    .fade-in:nth-child(4) { animation-delay: 0.7s; }
+
+    .btn-primary {
+      transition: all 0.2s ease;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 0 15px rgba(0, 173, 181, 0.6);
+      transform: translateY(-2px);
+    }
+    
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0d6efd, #0a58ca);
+      color: white;
+      font-size: 1.8rem;
+    }
+    
+    .feature-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm fade-in">
+  <div class="container-fluid px-2">
+    <a class="navbar-brand fw-bold fs-3" href="index.html">
+      <span class="text-primary">Tech</span>Gadgets
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item">
+          <a class="nav-link position-relative" href="cart.html">
+            <i class="bi bi-cart3 fs-5"></i>
+            <span id="cart-count" class="cart-badge d-none">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section text-white py-5 fade-in">
+    <div class="container d-flex flex-column flex-lg-row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h1 class="display-4 fw-bold mb-3">Innovative Tech for Modern Living</h1>
+        <p class="lead mb-4">
+          Discover high-performance solutions that seamlessly elevate your modern living — where design meets performance.
+        </p>
+        <a href="products.html" class="btn btn-primary btn-lg px-4">Shop Now</a>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img
+          src="https://images.unsplash.com/photo-1580894908361-967195033215?auto=format&fit=crop&w=800&q=80"
+          alt="Tech Gadgets Display"
+          class="img-fluid rounded-4 shadow-lg hero-img"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose-us py-5 bg-dark text-light fade-in">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Why Choose TechGadgets?</h2>
+        <p class="lead text-secondary">Discover what makes us the preferred choice for tech enthusiasts</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card bg-secondary text-light border-0 h-100 shadow feature-card p-4">
+            <div class="feature-icon">
+              <i class="bi bi-award"></i>
+            </div>
+            <h4 class="text-center mb-3">Premium Quality</h4>
+            <p class="text-center">We source only the highest quality components and rigorously test every product to ensure exceptional performance and durability.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card bg-secondary text-light border-0 h-100 shadow feature-card p-4">
+            <div class="feature-icon">
+              <i class="bi bi-headset"></i>
+            </div>
+            <h4 class="text-center mb-3">Expert Support</h4>
+            <p class="text-center">Our dedicated support team is available to help you with setup, troubleshooting, and getting the most out of your tech.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card bg-secondary text-light border-0 h-100 shadow feature-card p-4">
+            <div class="feature-icon">
+              <i class="bi bi-truck"></i>
+            </div>
+            <h4 class="text-center mb-3">Fast & Free Shipping</h4>
+            <p class="text-center">Enjoy free expedited shipping on all orders. Most products arrive within 2-3 business days with real-time tracking.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card bg-secondary text-light border-0 h-100 shadow feature-card p-4">
+            <div class="feature-icon">
+              <i class="bi bi-arrow-clockwise"></i>
+            </div>
+            <h4 class="text-center mb-3">Hassle-Free Returns</h4>
+            <p class="text-center">Not satisfied? Our 30-day return policy makes it easy to exchange or return products that don't meet your expectations.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card bg-secondary text-light border-0 h-100 shadow feature-card p-4">
+            <div class="feature-icon">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h4 class="text-center mb-3">Extended Warranty</h4>
+            <p class="text-center">All our products come with an extended warranty, giving you peace of mind and protection for your investment.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card bg-secondary text-light border-0 h-100 shadow feature-card p-4">
+            <div class="feature-icon">
+              <i class="bi bi-currency-dollar"></i>
+            </div>
+            <h4 class="text-center mb-3">Best Value</h4>
+            <p class="text-center">We offer competitive pricing without compromising on quality, ensuring you get the best value for your money.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview -->
+  <section class="py-5 text-center text-light fade-in" style="background: linear-gradient(180deg, #111, #000);">
+    <div class="container">
+      <h2 class="fw-bold mb-3">Designed for the Future</h2>
+      <p class="lead mb-4">
+        At TechGadgets, we believe technology isn't just functional — it's personal. Discover personal technology that seamlessly integrates into your life to empower your work, inspire your creativity, and innovate your every day.
+      </p>
+      <a href="about.html" class="btn btn-primary px-4">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter-section bg-dark text-white py-5 fade-in">
+    <div class="container text-center">
+      <h3 class="fw-bold mb-3">Join Our Newsletter</h3>
+      <p class="mb-4">Be the first to know about new arrivals and exclusive offers.</p>
+      <form class="d-flex justify-content-center">
+        <input type="email" class="form-control w-50 me-2" placeholder="Enter your email" required />
+        <button class="btn btn-primary px-4" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-light py-4 fade-in" style="background-color: #0b0b0b;">
+    <div class="container">
+      <p class="mb-1">&copy; 2025 TechGadgets. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

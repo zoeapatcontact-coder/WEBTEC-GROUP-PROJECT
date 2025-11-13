@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechGadgets - Shopping Cart</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 0.7s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cart-item {
+      animation: slideIn 0.5s ease both;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .btn-primary {
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 0 15px rgba(0, 173, 181, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .page-header, .order-summary {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .page-header { animation-delay: 0.1s; }
+    .order-summary { animation-delay: 0.3s; }
+
+    .page-header {
+      background: linear-gradient(135deg, #007bff, #000000);
+      text-align: center;
+      color: white;
+    }
+
+    .order-summary {
+      background-color: #1c1c1c !important;
+      color: #ffffff !important;
+      border: 1px solid #333;
+    }
+
+    .order-summary .card-body span,
+    .order-summary .card-body h5,
+    .order-summary .card-body p {
+      color: #ffffff !important;
+    }
+
+    .order-summary hr {
+      border-color: #444;
+    }
+
+    .order-summary a {
+      color: #0d6efd;
+    }
+
+    .order-summary a:hover {
+      color: #66b2ff;
+    }
+
+    .empty-cart .bi-cart-x {
+      color: #ffc107 !important;
+    }
+
+    .empty-cart p.text-muted {
+      color: #ffffff !important;
+    }
+
+    footer {
+      background-color: #0b0b0b;
+      color: #ffffff;
+      padding: 2rem 0;
+    }
+
+    footer a {
+      color: #0d6efd;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #66b2ff;
+      text-decoration: underline;
+    }
+
+    /* Fix text readability in cart items (product name, price, description) */
+    .cart-item .card-title {
+      color: #000 !important; /* Make product name black for contrast against white background */
+    }
+
+    .cart-item .text-muted {
+      color: #484646 !important; /* Make price text darker (instead of light grey) for readability */
+    }
+
+    .cart-item .card-text {
+      color: #000 !important; /* Ensure description text is dark if present */
+    }
+
+    /* Ensure cart item cards have white background for contrast */
+    .cart-item .card {
+      background-color: #fff !important;
+      color: #000 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm fade-in">
+  <div class="container-fluid px-2">
+    <a class="navbar-brand fw-bold fs-3" href="index.html">
+      <span class="text-primary">Tech</span>Gadgets
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item">
+          <a class="nav-link position-relative" href="cart.html">
+            <i class="bi bi-cart3 fs-5"></i>
+            <span id="cart-count" class="cart-badge d-none">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+  <div class="page-header py-5 fade-in">
+    <div class="container">
+      <h1 class="display-4">Your Shopping Cart</h1>
+      <p class="lead">Review your items and proceed to checkout</p>
+    </div>
+  </div>
+
+  <!-- Cart Section -->
+  <section class="py-5 fade-in bg-dark text-light">
+    <div class="container">
+      <div id="cart-items-container">
+        <div id="empty-cart" class="empty-cart">
+          <div class="text-center">
+            <i class="bi bi-cart-x display-1 text-muted"></i>
+            <h3 class="mt-3">Your cart is empty</h3>
+            <p class="text-muted">Browse our products and add items to your cart.</p>
+            <a href="products.html" class="btn btn-primary btn-lg mt-3">Start Shopping</a>
+          </div>
+        </div>
+
+        <div id="cart-with-items" class="d-none">
+          <div class="row">
+            <div class="col-md-8">
+              <div id="cart-items" class="cart-item">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card order-summary">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold mb-4">Order Summary</h5>
+                  <div class="d-flex justify-content-between mb-2">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">$0.00</span>
+                  </div>
+                  <div class="d-flex justify-content-between mb-2">
+                    <span>Shipping:</span>
+                    <span id="shipping">$10.00</span>
+                  </div>
+                  <div class="d-flex justify-content-between mb-2">
+                    <span>Tax:</span>
+                    <span id="tax">$0.00</span>
+                  </div>
+                  <hr>
+                  <div class="d-flex justify-content-between fw-bold fs-5">
+                    <span>Total:</span>
+                    <span id="total">$0.00</span>
+                  </div>
+                  <button id="checkout-btn" class="btn btn-primary w-100 mt-3 btn-lg">
+                    Proceed to Checkout
+                  </button>
+                  <button id="clear-cart-btn" class="btn btn-outline-danger w-100 mt-2">
+                    Clear Cart
+                  </button>
+                  <div class="text-center mt-3">
+                    <a href="products.html" class="text-decoration-none">
+                      <i class="bi bi-arrow-left"></i> Continue Shopping
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center fade-in">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5>TechGadgets</h5>
+          <p>Your definitive partner in next-generation technology and performance-driven devices.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Connect With Us</h5>
+          <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="me-3"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="me-3"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+      <hr class="my-4">
+      <p>&copy; 2025 TechGadgets. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

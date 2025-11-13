@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechGadgets | Contact Us</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body class="fade-in">
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm fade-in">
+  <div class="container-fluid px-2">
+    <a class="navbar-brand fw-bold fs-3" href="index.html">
+      <span class="text-primary">Tech</span>Gadgets
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item">
+          <a class="nav-link position-relative" href="cart.html">
+            <i class="bi bi-cart3 fs-5"></i>
+            <span id="cart-count" class="cart-badge d-none">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Header -->
+  <section class="contact-header text-white text-center py-5 animate__animated animate__fadeIn" style="background: linear-gradient(135deg, #0d6efd, #000);">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Contact Us</h1>
+      <p class="lead text-light opacity-75">
+        We'd love to hear from you — let's build something amazing together.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-5 bg-dark text-light animate__animated animate__fadeInUp">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Contact Info -->
+        <div class="col-lg-4">
+          <div class="d-flex flex-column gap-4">
+            <div class="d-flex align-items-center">
+              <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width:45px;height:45px;">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div>
+                <h5 class="mb-1">Address</h5>
+                <p class="text-secondary mb-0">Pantaleon del Rosario St<br>Cebu City, 6000</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center">
+              <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width:45px;height:45px;">
+                <i class="bi bi-telephone"></i>
+              </div>
+              <div>
+                <h5 class="mb-1">Phone</h5>
+                <p class="text-secondary mb-0">+1 (555) 123-4567</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center">
+              <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width:45px;height:45px;">
+                <i class="bi bi-envelope"></i>
+              </div>
+              <div>
+                <h5 class="mb-1">Email</h5>
+                <p class="text-secondary mb-0">hello@techgadgets.com</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center">
+              <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width:45px;height:45px;">
+                <i class="bi bi-clock"></i>
+              </div>
+              <div>
+                <h5 class="mb-1">Business Hours</h5>
+                <p class="text-secondary mb-0">Mon–Fri: 9 AM – 6 PM<br>Sat: 10 AM – 4 PM<br>Sun: Closed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-8">
+          <div class="bg-secondary rounded-4 p-4 shadow-lg">
+            <h3 class="fw-bold mb-4">Send us a Message</h3>
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="name" class="form-label">Full Name</label>
+                  <input type="text" id="name" class="form-control bg-dark text-white border-0" placeholder="John Doe" required />
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input type="email" id="email" class="form-control bg-dark text-white border-0" placeholder="you@example.com" required />
+                </div>
+                <div class="col-12">
+                  <label for="subject" class="form-label">Subject</label>
+                  <input type="text" id="subject" class="form-control bg-dark text-white border-0" placeholder="Inquiry or feedback" required />
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea id="message" class="form-control bg-dark text-white border-0" rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
+                <div class="col-12 text-end">
+                  <button type="submit" class="btn btn-primary px-5 py-2 mt-3">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5 bg-dark text-light animate__animated animate__fadeInUp">
+    <div class="container">
+      <h3 class="text-center fw-bold mb-5">Frequently Asked Questions</h3>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div>
+            <h5 class="text-primary">What is your return policy?</h5>
+            <p class="text-secondary">We offer a 30-day return policy for all products in original condition.</p>
+          </div>
+          <div>
+            <h5 class="text-primary">Do you offer international shipping?</h5>
+            <p class="text-secondary">Currently, we only ship within the United States but plan to expand soon.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div>
+            <h5 class="text-primary">How long does shipping take?</h5>
+            <p class="text-secondary">Standard shipping takes 3–5 business days. Express options are available at checkout.</p>
+          </div>
+          <div>
+            <h5 class="text-primary">Do you offer technical support?</h5>
+            <p class="text-secondary">Yes — our support team is available Monday–Friday for all product inquiries.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-light py-4 animate__animated animate__fadeInUp" style="background-color: #0b0b0b;">
+    <div class="container">
+      <p class="mb-1">&copy; 2025 TechGadgets. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
